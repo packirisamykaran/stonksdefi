@@ -7,6 +7,7 @@ pub mod stonksdefi {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+        
         Ok(())
     }
 }
