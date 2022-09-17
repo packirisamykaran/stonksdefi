@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0",
+  "name": "stonksdefi",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "countAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "increment",
+      "accounts": [
+        {
+          "name": "countAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set",
+      "accounts": [
+        {
+          "name": "countAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "data",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "CountAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "count",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "EXvuR1R53eaHNaf6QL1c3yGPjAP8fyFpxU8zamMNASgG"
+  }
+}

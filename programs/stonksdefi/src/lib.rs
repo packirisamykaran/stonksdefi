@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("EXvuR1R53eaHNaf6QL1c3yGPjAP8fyFpxU8zamMNASgG");
 
 #[program]
 pub mod stonksdefi {

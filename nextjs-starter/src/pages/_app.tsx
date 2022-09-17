@@ -16,7 +16,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     const network = WalletAdapterNetwork.Devnet;
 
     // You can also provide a custom RPC endpoint
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    const endpoint = "http://127.0.0.1:8899";
 
     const wallets = useMemo(
         () => [

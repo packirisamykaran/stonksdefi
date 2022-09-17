@@ -2,7 +2,7 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-stonksdefi = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+stonksdefi = "EXvuR1R53eaHNaf6QL1c3yGPjAP8fyFpxU8zamMNASgG"
 
 [registry]
 url = "https://api.apr.dev"
