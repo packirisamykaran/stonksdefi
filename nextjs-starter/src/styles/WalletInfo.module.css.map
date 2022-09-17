@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EACP,OAAO,EAAC,IAAI;EACZ,cAAc,EAAE,MAAM;EACtB,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "WalletInfo.module.scss"
+    ],
+    "names": [],
+    "file": "WalletInfo.module.css"
+}

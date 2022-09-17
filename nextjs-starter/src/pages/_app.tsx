@@ -1,29 +1,22 @@
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
-import React, { FC, ReactNode, useMemo } from 'react';
+import type { AppProps } from 'next/app';
+import type { FC } from 'react';
+import React, { useMemo } from 'react';
 
-require('./App.css');
+// Use require instead of import since order matters
 require('@solana/wallet-adapter-react-ui/styles.css');
+require('../styles/globals.css');
 
-const App: FC = () => {
-    return (
-        <Context>
-            <Content />
-        </Context>
-    );
-};
-export default App;
-
-const Context: FC<{ children: ReactNode }> = ({ children }) => {
-    // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+    // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
     const network = WalletAdapterNetwork.Devnet;
 
-    // You can also provide a custom RPC endpoint.
-    // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-    const endpoint  = "http://127.0.0.1:8899";
+    // You can also provide a custom RPC endpoint
+    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
     const wallets = useMemo(
         () => [
@@ -43,18 +36,12 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
-                <WalletModalProvider>{children}</WalletModalProvider>
+                <WalletModalProvider>
+                    <Component {...pageProps} />
+                </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
     );
 };
 
-const Content: FC = () => {
-    return (
-        <div className="App">
-            <div className="navbar">
-                <WalletMultiButton />
-            </div>
-        </div>
-    );
-};
+export default App;

@@ -1,0 +1,17 @@
+.index {
+  width: 100%;
+}
+
+.index .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  padding: 1rem;
+  border-bottom: 1px black solid;
+}
+/*# sourceMappingURL=index.module.css.map */
